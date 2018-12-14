@@ -4,7 +4,7 @@ import { View } from "react-native";
 import {
   FontAwesome,
   MaterialIcons,
-  MaterialCommunityIcons
+  MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import { white } from "./colors";
 
@@ -66,7 +66,7 @@ export function getMetricMetaInfo(metric) {
             <MaterialIcons name="directions-run" color={"black"} size={35} />
           </View>
         );
-      }
+      },
     },
     bike: {
       displayName: "Bike",
@@ -80,7 +80,7 @@ export function getMetricMetaInfo(metric) {
             <MaterialCommunityIcons name="bike" color={"black"} size={35} />
           </View>
         );
-      }
+      },
     },
     swim: {
       displayName: "Swim",
@@ -94,7 +94,7 @@ export function getMetricMetaInfo(metric) {
             <MaterialCommunityIcons name="swim" color={"black"} size={35} />
           </View>
         );
-      }
+      },
     },
     sleep: {
       displayName: "Sleep",
@@ -108,7 +108,7 @@ export function getMetricMetaInfo(metric) {
             <FontAwesome name="bed" color={"black"} size={35} />
           </View>
         );
-      }
+      },
     },
     eat: {
       displayName: "Eat",
@@ -122,8 +122,8 @@ export function getMetricMetaInfo(metric) {
             <MaterialCommunityIcons name="food" color={"black"} size={35} />
           </View>
         );
-      }
-    }
+      },
+    },
   };
 
   return typeof metric === "undefined" ? info : info[metric];
