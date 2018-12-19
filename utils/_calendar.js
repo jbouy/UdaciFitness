@@ -11,7 +11,6 @@ function getRandomNumber(max) {
 
 function setDummyData() {
   const { run, bike, swim, sleep, eat } = getMetricMetaInfo();
-
   let dummyData = {};
   const timestamp = Date.now();
 
@@ -25,7 +24,7 @@ function setDummyData() {
             bike: getRandomNumber(bike.max),
             swim: getRandomNumber(swim.max),
             sleep: getRandomNumber(sleep.max),
-            eat: getRandomNumber(eat.max)
+            eat: getRandomNumber(eat.max),
           }
         : null;
   }
