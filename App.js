@@ -9,9 +9,11 @@ import {
   createBottomTabNavigator,
   createMaterialTopTabNavigator,
   createAppContainer,
+  createStackNavigator,
 } from "react-navigation";
 import { purple, white } from "./utils/colors";
 import { Constants } from "expo";
+import EntryDetail from "./components/EntryDetail";
 
 const routes = {
   History: History,
@@ -47,12 +49,30 @@ function UdaciStatusBar({ backgroundColor, ...props }) {
   );
 }
 
-const Tabs =
+const TabNavigator =
   Platform.OS === "ios"
     ? createBottomTabNavigator(routes, navigationOptions)
     : createMaterialTopTabNavigator(routes, navigationOptions);
 
-const AppNavigator = createAppContainer(Tabs);
+const MainNavigator = createStackNavigator({
+  Home: {
+    screen: TabNavigator,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  EntryDetail: {
+    screen: EntryDetail,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: purple,
+      },
+    },
+  },
+});
+
+const AppNavigator = createAppContainer(MainNavigator);
 
 export default class App extends React.Component {
   render() {
