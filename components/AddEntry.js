@@ -20,6 +20,7 @@ import { submitEntry, removeEntry } from "../utils/api";
 import { connect } from "react-redux";
 import { addEntry } from "../actions";
 import { white, purple } from "../utils/colors";
+import { FontAwesome } from "@expo/vector-icons";
 
 function SubmitBtn({ onPress }) {
   return (
@@ -35,6 +36,13 @@ function SubmitBtn({ onPress }) {
 }
 
 class AddEntry extends Component {
+  static navigationOptions = {
+    title: "Add Entry",
+    tabBarIcon: ({ tintColor }) => (
+      <FontAwesome name="plus-square" size={30} color={tintColor} />
+    ),
+  };
+
   state = {
     run: 0,
     bike: 0,

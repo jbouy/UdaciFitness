@@ -21,20 +21,6 @@ const routes = {
 const navigationOptions = {
   defaultNavigationOptions: ({ navigation }) => ({
     header: null,
-    tabBarIcon: ({ tintColor }) => {
-      const { routeName } = navigation.state;
-
-      switch (routeName) {
-        case "History":
-          return <Ionicons name="ios-bookmarks" size={30} color={tintColor} />;
-        case "AddEntry":
-          return <FontAwesome name="plus-square" size={30} color={tintColor} />;
-      }
-    },
-    title:
-      navigation.state.routeName === "AddEntry"
-        ? "Add Entry"
-        : navigation.state.routeName,
   }),
   tabBarOptions: {
     showIcon: true,

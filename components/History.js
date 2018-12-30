@@ -15,8 +15,16 @@ import { white } from "../utils/colors";
 import DateHeader from "./DateHeader";
 import MetricCard from "./MetricCard";
 import { AppLoading } from "expo";
+import { Ionicons } from "@expo/vector-icons";
 
 class History extends Component {
+  static navigationOptions = {
+    title: "History",
+    tabBarIcon: ({ tintColor }) => (
+      <Ionicons name="ios-bookmarks" size={30} color={tintColor} />
+    ),
+  };
+
   state = {
     ready: false,
   };
