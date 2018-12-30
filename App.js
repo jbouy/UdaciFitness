@@ -14,10 +14,12 @@ import {
 import { purple, white } from "./utils/colors";
 import { Constants } from "expo";
 import EntryDetail from "./components/EntryDetail";
+import Live from "./components/Live";
 
 const routes = {
   History: History,
   AddEntry: AddEntry,
+  Live: Live,
 };
 
 const navigationOptions = {
