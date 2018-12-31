@@ -15,6 +15,7 @@ import { purple, white } from "./utils/colors";
 import { Constants } from "expo";
 import EntryDetail from "./components/EntryDetail";
 import Live from "./components/Live";
+import { setLocalNotification } from "./utils/helpers";
 
 const routes = {
   History: History,
@@ -77,6 +78,10 @@ const MainNavigator = createStackNavigator({
 const AppNavigator = createAppContainer(MainNavigator);
 
 export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification();
+  }
+
   render() {
     return (
       <Provider store={createStore(reducer)}>
